@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto:wght@100&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+
+}
+
+.section-ranking {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  color: whitesmoke;
+}
+
+.ranking-list {
+  background-color: whitesmoke;
+  list-style: none;
+  padding: 0px;
+  width: 80%;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px black;
+  margin-bottom: 35px;
+  align-self: center;
+}
+
+.li-ranking {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: min-content;
+  border-radius: 8px;
+}
+
+.li-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: min-content;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: 2px solid black;
+  background-color: #C51D62;
+  color: white;
+}
+
+.li-ranking:nth-child(even) {
+  background-color: silver;
+  margin: 0;
+}
+
+#user-pic {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+
+#user-name {
+  width: 200px;
+}
+
+.score {
+  margin-bottom: 0px;
+}
+
+.go-back-btn {
+  margin: auto;
+  width: 10vw;
+  align-self: center;
+  bottom: 10px;
+}
