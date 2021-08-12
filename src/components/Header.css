@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header-player {
+  display: flex;
+  width: 100vw;
+  background-color: #111111;
+  border-bottom: 4px solid #4d4d4d;
+  box-shadow: 1px 1px 5px black;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 45vw;
+}
+
+.img-info {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin: 0.5vw 1.3vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50px;
+  border: 1px solid white;
+}
+
+.name-info {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4vw;
+  margin: 0.5vw 0;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.header-content{
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15vh;
+}
+
+.top-header {
+  display: flex;
+}
+
+.bottom-header {
+  background-color: #4d4d4d;
+  position: absolute;
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  width: 18vw;
+  font-size: 1.5vw;
+  max-height: 17vh;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transform-origin: 54% 0;
+  color: white;
+  border-bottom: 2px solid #111111;
+  border-left: 4px solid #111111;
+  border-right: 4px solid #111111;
+}
+
+.score{
+  font-weight: bolder;
+
+}
+
+.line {
+  width: 1px;
+  height: 5vh;
+  background-color: white;
+  margin-right: 1vw;
+}

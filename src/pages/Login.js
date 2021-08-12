@@ -9,6 +9,7 @@ import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import SettingsIcon from '@material-ui/icons/Settings';
 import logo from '../trivia.png';
 import { actionGetGravatarImg } from '../redux/action';
+import Loading from '../components/Loading';
 import './Login.css';
 
 class Login extends Component {
@@ -21,6 +22,7 @@ class Login extends Component {
       redirect: false,
       toConfig: false,
       minLengthName: 3,
+      loading: false,
     };
     this.validateEmail = this.validateEmail.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -61,6 +63,7 @@ class Login extends Component {
     result = await result.json();
     localStorage.setItem('token', JSON.stringify(result.token));
     this.setState({
+      loading: false,
       redirect: true,
     });
   }
@@ -91,6 +94,9 @@ class Login extends Component {
   async fetchGravatar() {
     const { email, nameInput } = this.state;
     const { setPlayerInfo } = this.props;
+    this.setState({
+      loading: true,
+    });
     const toHash = md5(email).toString();
     const result = await fetch(`https://www.gravatar.com/avatar/${toHash}`);
     setPlayerInfo(result.url, nameInput);
@@ -98,7 +104,11 @@ class Login extends Component {
   }
 
   render() {
-    const { disableBtn, nameInput, redirect, toConfig, minLengthName } = this.state;
+    const { disableBtn, nameInput, redirect, toConfig,
+      minLengthName, loading } = this.state;
+    if (loading) {
+      return <Loading />;
+    }
     if (redirect) {
       return <Redirect to="/jogo" />;
     } if (toConfig) {
