@@ -6,7 +6,6 @@ import { Box, Button } from '@material-ui/core';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import Questions from '../components/Questions';
-import './Game.css';
 import CardQuestions from '../components/CardQuestions';
 
 class Game extends React.Component {

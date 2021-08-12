@@ -5,7 +5,6 @@ import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import ReplayIcon from '@material-ui/icons/Replay';
 import Header from '../components/Header';
 import Results from '../components/Results';
-import './Feedback.css';
 
 class Feedback extends React.Component {
   constructor() {

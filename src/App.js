@@ -10,15 +10,13 @@ import Ranking from './pages/Ranking';
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Switch>
-          <Route exact path="/" component={ Login } />
-          <Route exact path="/configs" component={ Configs } />
-          <Route exact path="/jogo" component={ Game } />
-          <Route exact path="/feedback" component={ Feedback } />
-          <Route exact path="/ranking" component={ Ranking } />
-        </Switch>
-      </header>
+      <Switch>
+        <Route exact path="/" component={ Login } />
+        <Route exact path="/configs" component={ Configs } />
+        <Route exact path="/jogo" component={ Game } />
+        <Route exact path="/feedback" component={ Feedback } />
+        <Route exact path="/ranking" component={ Ranking } />
+      </Switch>
     </div>
   );
 }
