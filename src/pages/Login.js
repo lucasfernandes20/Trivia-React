@@ -9,6 +9,7 @@ import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import SettingsIcon from '@material-ui/icons/Settings';
 import logo from '../trivia.png';
 import { actionGetGravatarImg } from '../redux/action';
+import './Login.css';
 
 class Login extends Component {
   constructor() {
@@ -105,29 +106,35 @@ class Login extends Component {
     }
     return (
       <section className="login-content">
-        <img src={ logo } className="App-logo" alt="logo" />
-        {this.setInput()}
-        <Button
-          type="button"
-          data-testid="btn-play"
-          disabled={ disableBtn || nameInput.length < minLengthName }
-          onClick={ () => this.fetchGravatar() }
-          variant="contained"
-          color="primary"
-        >
-          <PlayCircleFilledIcon />
-          Jogar
-        </Button>
-        <Button
-          type="button"
-          data-testid="btn-settings"
-          onClick={ () => this.redirectToConfig() }
-          variant="contained"
-          color="secondary"
-        >
-          <SettingsIcon />
-          Configurações
-        </Button>
+        <div className="image-side">
+          <img src={ logo } className="App-logo" alt="logo" />
+        </div>
+        <div className="login-side">
+          <div className="box-login">
+            {this.setInput()}
+            <Button
+              type="button"
+              data-testid="btn-play"
+              disabled={ disableBtn || nameInput.length < minLengthName }
+              onClick={ () => this.fetchGravatar() }
+              variant="contained"
+              color="primary"
+            >
+              <PlayCircleFilledIcon />
+              Jogar
+            </Button>
+            <Button
+              type="button"
+              data-testid="btn-settings"
+              onClick={ () => this.redirectToConfig() }
+              variant="contained"
+              color="secondary"
+            >
+              <SettingsIcon />
+              Configurações
+            </Button>
+          </div>
+        </div>
       </section>
     );
   }
