@@ -1,12 +1,15 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { Box, Button } from '@material-ui/core';
+import TimerOffSharpIcon from '@material-ui/icons/TimerOffSharp';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import Questions from '../components/Questions';
 import CardQuestions from '../components/CardQuestions';
+import './Game.css';
 
 class Game extends React.Component {
   constructor(props) {
@@ -27,6 +30,7 @@ class Game extends React.Component {
     this.nextQuestion = this.nextQuestion.bind(this);
     this.enableButton = this.enableButton.bind(this);
     this.setToLocal = this.setToLocal.bind(this);
+    this.gif = this.gif.bind(this);
   }
 
   componentDidMount() {
@@ -171,6 +175,17 @@ class Game extends React.Component {
     this.enableButton();
   }
 
+  gif() {
+    const { seconds } = this.state;
+    if (seconds === 0) {
+      return (
+        <div>
+          <TimerOffSharpIcon />
+        </div>
+      );
+    }
+  }
+
   render() {
     const { questions, questionNumber, loading, score, seconds, next } = this.state;
     const { getUrl, getName } = this.props;
@@ -187,32 +202,39 @@ class Game extends React.Component {
         <main className="geral">
           <Header getUrl={ getUrl } getName={ getName } score={ score } />
           <div className="cardEndQuestions">
-            <CardQuestions
-              questions={ questions }
-              questionNumber={ questionNumber }
-              seconds={ seconds }
-            />
-            <Questions
-              questions={ questions }
-              questionNumber={ questionNumber }
-              getScore={ this.getScore }
-            />
-            {
-              next
-                ? (
-                  <Box bgcolor="#00BFFF" clone>
-                    <Button
-                      size="medium"
-                      variant="contained"
-                      type="button"
-                      data-testid="btn-next"
-                      onClick={ this.nextQuestion }
-                    >
-                      Próxima
-                    </Button>
-                  </Box>)
-                : null
-            }
+            <div>
+              <CardQuestions
+                questions={ questions }
+                questionNumber={ questionNumber }
+              />
+            </div>
+            <div>
+              <span className="seconds">{seconds}</span>
+              <span className="gif">{this.gif()}</span>
+            </div>
+            <div>
+              <Questions
+                questions={ questions }
+                questionNumber={ questionNumber }
+                getScore={ this.getScore }
+              />
+              {
+                next
+                  ? (
+                    <Box bgcolor="#00BFFF" clone>
+                      <Button
+                        size="medium"
+                        variant="contained"
+                        type="button"
+                        data-testid="btn-next"
+                        onClick={ this.nextQuestion }
+                      >
+                        Próxima
+                      </Button>
+                    </Box>)
+                  : null
+              }
+            </div>
           </div>
         </main>
       );

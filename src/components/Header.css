@@ -46,7 +46,10 @@
 }
 
 .bottom-header {
-  background-color: #4d4d4d;
+  background-image: url('https://wallpapercave.com/wp/wp6800492.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
   font-family: 'Bebas Neue', cursive, sans-serif;
   font-weight: bold;
@@ -58,9 +61,9 @@
   border-bottom-right-radius: 50px;
   transform-origin: 54% 0;
   color: white;
-  border-bottom: 2px solid #111111;
-  border-left: 4px solid #111111;
-  border-right: 4px solid #111111;
+  border-bottom: 2px solid #afafaf;
+  border-left: 3px solid #afafaf;
+  border-right: 3px solid #afafaf;
 }
 
 .score{
