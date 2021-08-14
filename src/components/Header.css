@@ -6,6 +6,7 @@
   width: 100vw;
   background-color: #111111;
   border-bottom: 3px solid #4d4d4d;
+  box-shadow: 0px 0px 90px black;
 }
 
 .player-info {
@@ -23,14 +24,25 @@
   height: 3vw;
   border-radius: 50px;
   border: 1px solid white;
+  box-shadow: 0 0 1px #fff,
+  0 0 2px #fff,
+  0 0 4px #fff,
+  0 0 10px #61156E,
+  0 0 35px #61156E;
+  animation: slidein 2s;
+
 }
 
 .name-info {
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.4vw;
   margin: 0.5vw 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: whitesmoke;
   font-weight: bold;
+  animation: slidein 6s;
 }
 
 .header-content{
@@ -68,7 +80,6 @@
 
 .score{
   font-weight: bolder;
-
 }
 
 .line {
@@ -76,4 +87,18 @@
   height: 5vh;
   background-color: white;
   margin-right: 1vw;
+  border: 1px solid white;
+  box-shadow: 0 0 1px #fff,
+  0 0 6px #fff,
+  0 0 10px #fff;
+}
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+  }
+
+  to {
+    margin-right: 1.4vw;
+  }
 }

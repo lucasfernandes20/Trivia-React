@@ -1,5 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+body{
+  background:
+         /* top, transparent black, faked with gradient */ 
+         linear-gradient(
+           rgba(0, 0, 0, 0.7), 
+           rgba(0, 0, 0, 0.7)
+         ),
+         /* bottom, image */
+         url('https://i.ytimg.com/vi/f_mEZdTd74s/maxresdefault.jpg');
+         background-size: cover;
+}
+
 .cardEndQuestions {
   display: flex;
   width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-questions {
+  width: 20vw;
+  height: 65vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  padding: 1vw 5vw;
+  color: white;
+  margin-left: 3vw;
+  animation: Borderpulsate 0.11s ease-in-out infinite alternate;
+  border: 1px solid white;
+
+}
+
+.category-question-line {
+  height: 2px;
+  width: 20vw;
+  background-color: rgb(255, 255, 255);
+  animation: flicker 2.5s infinite alternate;
+}
+
+.asking {
+  font-size: 1.8vw;
+  font-family: 'Nunito', sans-serif;
+  width: 27vw;
+  font-weight: 900;
+}
+
+.category {
+  height: 1vh;
+}
+
+.question {
+  height: 30vh;
+}
+
+@keyframes Borderpulsate {
+  100% {
+    /* Larger blur radius */
+    box-shadow:
+      0 0 2px #fff,
+      0 0 5.5px #fff,
+      0 0 9.5px #fff,
+      0 0 20px #f09,
+      0 0 40px #f09,
+      0 0 45px #f09,
+      0 0 50px #f09,
+      0 0 75px #f09;
+  }
+ 0% {
+    /* A slightly smaller blur radius */
+    box-shadow:
+      0 0 2px #fff,
+      0 0 5px #fff,
+      0 0 9px #fff,
+      0 0 19px #f09,
+      0 0 36.5px #f09,
+      0 0 40px #f09,
+      0 0 49px #f09,
+      0 0 70px #f09;
+  }
+}
+
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      box-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  
+  }
+  
+  20%, 24%, 55% {        
+      box-shadow: none;
+  }    
+}
+
+.timer-clock{
+  background-image: url('https://www.pikpng.com/pngl/b/64-647325_clock-png-transparent-background-clock-face-png-clipart.png');
+  background-size: cover;
+  background-color: rgba(245, 245, 245, 0.8);
+  font-size: 4vw;
+  font-family: 'Rajdhani', sans-serif;
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vw;
+  border-radius: 100px;
+  animation: BorderpulsateTimer 0.5s ease-in-out infinite alternate;
+  
+  /* box-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa; */
+}
+
+@keyframes BorderpulsateTimer {
+  100% {
+    /* Larger blur radius */
+    box-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #0fa
+  }
+ 0% {
+    /* A slightly smaller blur radius */
+    box-shadow: none;
+  }
+}
+
+.anwser-btns{
+  width: 20vw;
+  height: 65vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vw 5vw;
+  color: white;
+  margin-right: 3vw;
+  animation: Borderpulsate 0.11s ease-in-out infinite alternate;
+  border: 1px solid white;
+}
+
+.questions-content {
+  display: flex;
+  flex-direction: column;
 }

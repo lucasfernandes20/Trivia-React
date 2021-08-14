@@ -208,11 +208,10 @@ class Game extends React.Component {
                 questionNumber={ questionNumber }
               />
             </div>
-            <div>
-              <span className="seconds">{seconds}</span>
-              <span className="gif">{this.gif()}</span>
+            <div className="timer-clock">
+              <span className="seconds">{seconds > 0 ? seconds : this.gif()}</span>
             </div>
-            <div>
+            <div className="anwser-btns">
               <Questions
                 questions={ questions }
                 questionNumber={ questionNumber }
