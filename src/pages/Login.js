@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import md5 from 'crypto-js/md5';
@@ -7,6 +8,8 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import SettingsIcon from '@material-ui/icons/Settings';
+import LockIcon from '@material-ui/icons/Lock';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
 import logo from '../trivia.png';
 import { actionGetGravatarImg } from '../redux/action';
 import Loading from '../components/Loading';
@@ -121,6 +124,15 @@ class Login extends Component {
         </div>
         <div className="login-side">
           <div className="box-login">
+            <div className="icon-content">
+              { disableBtn || nameInput.length < minLengthName
+                ? <div className="lock-icon">
+                  <LockIcon />
+                </div>
+                : <div className="lock-open-icon">
+                  <LockOpenIcon />
+                </div> }
+            </div>
             {this.setInput()}
             <Button
               type="button"

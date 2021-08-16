@@ -152,13 +152,30 @@ body{
   justify-content: space-around;
   align-items: center;
   padding: 1vw 5vw;
-  color: white;
   margin-right: 3vw;
-  animation: Borderpulsate 0.11s ease-in-out infinite alternate;
   border: 1px solid white;
 }
 
 .questions-content {
   display: flex;
   flex-direction: column;
+  background-color: blueviolet;
+  width: 10vw;
+  height: 10vw;
+  padding: 4vw;
+}
+
+.c-answer, .w-answer {
+  margin: 0.4vw;
+  border: 1px solid white;
+  background-color: rgb(68, 35, 187);
+  color: white;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.4vw;
+}
+
+.c-answer, .w-answer:hover {
+  cursor: pointer;
 }
