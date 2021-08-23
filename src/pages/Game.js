@@ -139,12 +139,12 @@ class Game extends React.Component {
 
   buttonColorDisabler() {
     const correctAnswerButton = document.getElementsByClassName('c-answer');
-    correctAnswerButton[0].style.backgroundColor = '#303F9F';
     correctAnswerButton[0].setAttribute('disabled', 'disabled');
+    correctAnswerButton[0].classList.add('correct-disabled');
     const incorrectAnswerButton = document.querySelectorAll('.w-answer');
     incorrectAnswerButton.forEach((button) => {
-      button.style.backgroundColor = '#C51D62';
       button.setAttribute('disabled', 'disabled');
+      button.classList.add('wrong-disabled');
     });
     this.setState({
       next: true,
@@ -154,11 +154,11 @@ class Game extends React.Component {
   enableButton() {
     const correctAnswerButton = document.getElementsByClassName('c-answer');
     correctAnswerButton[0].removeAttribute('disabled', 'disabled');
-    correctAnswerButton[0].style.backgroundColor = '#303F9F';
+    correctAnswerButton[0].classList.remove('correct-disabled');
     const incorrectAnswerButton = document.querySelectorAll('.w-answer');
     incorrectAnswerButton.forEach((button) => {
-      button.style.backgroundColor = '#303F9F';
       button.removeAttribute('disabled', 'disabled');
+      button.classList.remove('wrong-disabled');
     });
   }
 

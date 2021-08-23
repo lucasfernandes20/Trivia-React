@@ -61,8 +61,8 @@ class Feedback extends React.Component {
     }
     return (
       <section className="feedback-content">
-        <Results />
         <Header score={ score } />
+        <Results />
         <p data-testid="feedback-text">{message || 'Loading'}</p>
         <div className="button-play-again">
           <Button

@@ -7,6 +7,16 @@
   background-color: #111111;
   border-bottom: 3px solid #4d4d4d;
   box-shadow: 0px 0px 90px black;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HomeIcon {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  justify-content: center;
+  margin-right: 5vw;
 }
 
 .player-info {

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
-body{
+.geral{
+  width: 100vw;
+  height: 100vh;
   background:
          /* top, transparent black, faked with gradient */ 
          linear-gradient(
@@ -119,12 +121,6 @@ body{
   height: 10vw;
   border-radius: 100px;
   animation: BorderpulsateTimer 0.5s ease-in-out infinite alternate;
-  
-  /* box-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #0fa; */
 }
 
 @keyframes BorderpulsateTimer {
@@ -143,32 +139,33 @@ body{
 }
 
 .anwser-btns{
-  width: 20vw;
-  height: 65vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1vw 5vw;
-  margin-right: 3vw;
-  border: 1px solid white;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ gap: 30px;
+
 }
 
 .questions-content {
   display: flex;
   flex-direction: column;
-  background-color: blueviolet;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.6);
   width: 10vw;
   height: 10vw;
   padding: 4vw;
+  margin-right: 13vw; 
 }
 
 .c-answer, .w-answer {
   margin: 0.4vw;
   border: 1px solid white;
-  background-color: rgb(68, 35, 187);
+  width: 200px;
+  background-color: #303F9F;
   color: white;
   font-size: large;
   font-weight: 700;
@@ -176,6 +173,16 @@ body{
   padding: 0.4vw;
 }
 
-.c-answer, .w-answer:hover {
+.c-answer:hover, .w-answer:hover {
   cursor: pointer;
+  border: 1px solid rgb(0, 190, 127);
+}
+
+.correct-disabled {
+  background-color: #303F9F;
+  animation: flicker 2.5s infinite alternate;
+}
+
+.wrong-disabled {
+  background-color: #C51D62;
 }

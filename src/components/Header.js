@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Header.css';
+import HomeIcon from '@material-ui/icons/Home';
 
 class Header extends React.Component {
   render() {
@@ -21,6 +23,12 @@ class Header extends React.Component {
               <h4 className="name-info" data-testid="header-player-name">{getName}</h4>
             </div>
           </div>
+          <Link to="/" style={ { textDecoration: 'none' } }>
+            <h3 style={ { color: 'whitesmoke' } } className="HomeIcon">
+              <HomeIcon fontSize="large" />
+              Home
+            </h3>
+          </Link>
         </div>
         <div className="bottom-header">
           <p>score</p>
