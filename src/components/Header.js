@@ -25,8 +25,8 @@ class Header extends React.Component {
           </div>
           <Link to="/" style={ { textDecoration: 'none' } }>
             <h3 style={ { color: 'whitesmoke' } } className="HomeIcon">
-              <HomeIcon fontSize="large" />
-              Home
+              <HomeIcon fontSize="medium" />
+              Login
             </h3>
           </Link>
         </div>

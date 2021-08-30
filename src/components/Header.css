@@ -9,6 +9,7 @@
   box-shadow: 0px 0px 90px black;
   justify-content: space-between;
   align-items: center;
+  z-index: 10000;
 }
 
 .HomeIcon {
@@ -82,6 +83,7 @@
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   transform-origin: 54% 0;
+  z-index: 10001;
   color: white;
   border-bottom: 2px solid #afafaf;
   border-left: 3px solid #afafaf;

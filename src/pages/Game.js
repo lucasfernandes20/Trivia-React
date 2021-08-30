@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { Box, Button } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import TimerOffSharpIcon from '@material-ui/icons/TimerOffSharp';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
@@ -220,18 +220,28 @@ class Game extends React.Component {
               {
                 next
                   ? (
-                    <Box bgcolor="#00BFFF" clone>
-                      <Button
-                        size="medium"
-                        variant="contained"
-                        type="button"
-                        data-testid="btn-next"
-                        onClick={ this.nextQuestion }
-                      >
+                    <button
+                      className="nextBtn"
+                      type="button"
+                      data-testid="btn-next"
+                      onClick={ this.nextQuestion }
+                    >
+                      <span>
                         Próxima
-                      </Button>
-                    </Box>)
-                  : null
+                      </span>
+                    </button>
+                  )
+                  : (
+                    <button
+                      className="nextBtnNone"
+                      type="button"
+                      data-testid="btn-next"
+                      onClick={ this.nextQuestion }
+                    >
+                      <span>
+                        Próxima
+                      </span>
+                    </button>)
               }
             </div>
           </div>

@@ -1,0 +1,81 @@
+.feedback-content {
+  background-image: url('https://cdn.wallpapersafari.com/40/88/nx1YrS.jpg');
+  width: 100vw;
+  height: 100vh;
+}
+
+.feedback-flex-content {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 60vh;
+  align-items: center;
+}
+
+.feedback-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 40vw;
+  height: 60vh;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  -webkit-animation: fadeInUp 500ms ease-in-out;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      z-index: 0;
+      transform: translateY(-100vh);
+  }
+  100% {
+      opacity: 1;
+      z-index: 9999;
+      transform: translateY(0);
+  }
+}
+
+.results {
+  font-size: 1.5vw;
+  animation: fadeIn 2s ease-in-out;
+
+}
+
+.results-span {
+  font-weight: 900;
+  font-size: 1.6vw;
+  color: rgb(204, 207, 33);
+  padding: 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+}
+90% {
+  opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+.feeback-message {
+  font-size: 2vw;
+  font-weight: 900;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+  text-shadow:  0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0    40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+  text-shadow:  0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
