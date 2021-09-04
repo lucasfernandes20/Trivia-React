@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { Box } from '@material-ui/core';
 import TimerOffSharpIcon from '@material-ui/icons/TimerOffSharp';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
