@@ -5,6 +5,7 @@ import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import ReplayIcon from '@material-ui/icons/Replay';
 import Header from '../components/Header';
 import Results from '../components/Results';
+import './Feedback.css';
 
 class Feedback extends React.Component {
   constructor() {
@@ -61,32 +62,36 @@ class Feedback extends React.Component {
     }
     return (
       <section className="feedback-content">
-        <Results />
         <Header score={ score } />
-        <p data-testid="feedback-text">{message || 'Loading'}</p>
-        <div className="button-play-again">
-          <Button
-            type="button"
-            data-testid="btn-play-again"
-            onClick={ this.redirectLogin }
-            variant="contained"
-            color="primary"
-          >
-            <ReplayIcon />
-            Jogar Novamente
-          </Button>
-        </div>
-        <div className="button-ranking">
-          <Button
-            type="button"
-            data-testid="btn-ranking"
-            onClick={ this.redirectRanking }
-            variant="contained"
-            color="secondary"
-          >
-            <FormatListNumberedIcon />
-            Ver Ranking
-          </Button>
+        <div className="feedback-flex-content">
+          <div className="feedback-box">
+            <Results />
+            <p className="feeback-message" data-testid="feedback-text">{message || 'Loading'}</p>
+            <div className="button-play-again">
+              <Button
+                type="button"
+                data-testid="btn-play-again"
+                onClick={ this.redirectLogin }
+                variant="contained"
+                color="primary"
+              >
+                <ReplayIcon />
+                Jogar Novamente
+              </Button>
+            </div>
+            <div className="button-ranking">
+              <Button
+                type="button"
+                data-testid="btn-ranking"
+                onClick={ this.redirectRanking }
+                variant="contained"
+                color="secondary"
+              >
+                <FormatListNumberedIcon />
+                Ver Ranking
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     );

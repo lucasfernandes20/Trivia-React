@@ -1,12 +1,14 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { Box, Button } from '@material-ui/core';
+import TimerOffSharpIcon from '@material-ui/icons/TimerOffSharp';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import Questions from '../components/Questions';
 import CardQuestions from '../components/CardQuestions';
+import './Game.css';
 
 class Game extends React.Component {
   constructor(props) {
@@ -27,6 +29,7 @@ class Game extends React.Component {
     this.nextQuestion = this.nextQuestion.bind(this);
     this.enableButton = this.enableButton.bind(this);
     this.setToLocal = this.setToLocal.bind(this);
+    this.gif = this.gif.bind(this);
   }
 
   componentDidMount() {
@@ -135,12 +138,12 @@ class Game extends React.Component {
 
   buttonColorDisabler() {
     const correctAnswerButton = document.getElementsByClassName('c-answer');
-    correctAnswerButton[0].style.border = '3px solid rgb(6, 240, 15)';
     correctAnswerButton[0].setAttribute('disabled', 'disabled');
+    correctAnswerButton[0].classList.add('correct-disabled');
     const incorrectAnswerButton = document.querySelectorAll('.w-answer');
     incorrectAnswerButton.forEach((button) => {
-      button.style.border = '3px solid rgb(255, 0, 0)';
       button.setAttribute('disabled', 'disabled');
+      button.classList.add('wrong-disabled');
     });
     this.setState({
       next: true,
@@ -149,12 +152,12 @@ class Game extends React.Component {
 
   enableButton() {
     const correctAnswerButton = document.getElementsByClassName('c-answer');
-    correctAnswerButton[0].style.border = '1px solid black';
     correctAnswerButton[0].removeAttribute('disabled', 'disabled');
+    correctAnswerButton[0].classList.remove('correct-disabled');
     const incorrectAnswerButton = document.querySelectorAll('.w-answer');
     incorrectAnswerButton.forEach((button) => {
-      button.style.border = '1px solid black';
       button.removeAttribute('disabled', 'disabled');
+      button.classList.remove('wrong-disabled');
     });
   }
 
@@ -169,6 +172,17 @@ class Game extends React.Component {
     });
     this.count = setInterval(this.timer, interval);
     this.enableButton();
+  }
+
+  gif() {
+    const { seconds } = this.state;
+    if (seconds === 0) {
+      return (
+        <div>
+          <TimerOffSharpIcon />
+        </div>
+      );
+    }
   }
 
   render() {
@@ -187,32 +201,48 @@ class Game extends React.Component {
         <main className="geral">
           <Header getUrl={ getUrl } getName={ getName } score={ score } />
           <div className="cardEndQuestions">
-            <CardQuestions
-              questions={ questions }
-              questionNumber={ questionNumber }
-              seconds={ seconds }
-            />
-            <Questions
-              questions={ questions }
-              questionNumber={ questionNumber }
-              getScore={ this.getScore }
-            />
-            {
-              next
-                ? (
-                  <Box bgcolor="#00BFFF" clone>
-                    <Button
-                      size="medium"
-                      variant="contained"
+            <div>
+              <CardQuestions
+                questions={ questions }
+                questionNumber={ questionNumber }
+              />
+            </div>
+            <div className="timer-clock">
+              <span className="seconds">{seconds > 0 ? seconds : this.gif()}</span>
+            </div>
+            <div className="anwser-btns">
+              <Questions
+                questions={ questions }
+                questionNumber={ questionNumber }
+                getScore={ this.getScore }
+              />
+              {
+                next
+                  ? (
+                    <button
+                      className="nextBtn"
                       type="button"
                       data-testid="btn-next"
                       onClick={ this.nextQuestion }
                     >
-                      Próxima
-                    </Button>
-                  </Box>)
-                : null
-            }
+                      <span>
+                        Próxima
+                      </span>
+                    </button>
+                  )
+                  : (
+                    <button
+                      className="nextBtnNone"
+                      type="button"
+                      data-testid="btn-next"
+                      onClick={ this.nextQuestion }
+                    >
+                      <span>
+                        Próxima
+                      </span>
+                    </button>)
+              }
+            </div>
           </div>
         </main>
       );

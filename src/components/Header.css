@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header-player {
+  display: flex;
+  width: 100vw;
+  background-color: #111111;
+  border-bottom: 3px solid #4d4d4d;
+  box-shadow: 0px 0px 90px black;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+.HomeIcon {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  justify-content: center;
+  margin-right: 5vw;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 45vw;
+}
+
+.img-info {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin: 0.5vw 1.3vw;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50px;
+  border: 1px solid white;
+  box-shadow: 0 0 1px #fff,
+  0 0 2px #fff,
+  0 0 4px #fff,
+  0 0 10px #61156E,
+  0 0 35px #61156E;
+  animation: slidein 2s;
+
+}
+
+.name-info {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4vw;
+  margin: 0.5vw 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: whitesmoke;
+  font-weight: bold;
+  animation: slidein 6s;
+}
+
+.header-content{
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15vh;
+}
+
+.top-header {
+  display: flex;
+}
+
+.bottom-header {
+  background-image: url('https://wallpapercave.com/wp/wp6800492.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  width: 18vw;
+  font-size: 1.5vw;
+  max-height: 17vh;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transform-origin: 54% 0;
+  z-index: 10001;
+  color: white;
+  border-bottom: 2px solid #afafaf;
+  border-left: 3px solid #afafaf;
+  border-right: 3px solid #afafaf;
+}
+
+.score{
+  font-weight: bolder;
+}
+
+.line {
+  width: 1px;
+  height: 5vh;
+  background-color: white;
+  margin-right: 1vw;
+  border: 1px solid white;
+  box-shadow: 0 0 1px #fff,
+  0 0 6px #fff,
+  0 0 10px #fff;
+}
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+  }
+
+  to {
+    margin-right: 1.4vw;
+  }
+}
